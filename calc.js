@@ -29,16 +29,27 @@ export function getValue(e) {
             let [firstNum, op, secondNum] = expression.split(' ');
 
             const operators = {
-                '-': () => (Number(firstNum) - Number(secondNum)).toFixed(2),
-                '+': () => (Number(firstNum) + Number(secondNum)).toFixed(2),
-                '*': () => (Number(firstNum) * Number(secondNum)).toFixed(2),
-                '/': () => (Number(firstNum) / Number(secondNum)).toFixed(2)
+                '-': calcMinusResult(firstNum, secondNum),
+                '+': calcPlusResult(firstNum, secondNum),
+                '*': calcMultyplyResult(firstNum, secondNum),
+                '/': calcDivadeResult(firstNum, secondNum)
             } 
 
-            finalResult = operators[op]();
+            finalResult = operators[op];
             display.textContent = finalResult;
-    
         }
-
     } 
+}
+
+function calcMultyplyResult(numA, numB) {
+    return (Number(numA) * Number(numB))
+}
+function calcMinusResult(numA, numB) {
+    return (Number(numA) - Number(numB))
+}
+function calcPlusResult(numA, numB) {
+    return (Number(numA) + Number(numB))
+}
+function calcDivadeResult(numA, numB) {
+    return (Number(numA) / Number(numB))
 }
