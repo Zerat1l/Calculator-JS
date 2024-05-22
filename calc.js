@@ -24,7 +24,7 @@ export function getValue(e) {
         }else if(display.textContent.length > 0 && input !== '=') {
             display.textContent += input
         }
-    }else {
+    }else if(display.textContent.length > 15){
         display.textContent = 'Max digits reached!'
     }
       
