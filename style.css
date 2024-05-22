@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-color: blanchedalmond;
+    background-color: cadetblue;
     font-family: "Roboto Condensed", sans-serif;
 }
 
@@ -37,6 +37,9 @@ body {
     display: flex;
     justify-content: end;
     margin-right: 9px;
+}
+#clear .clearBtn {
+    background-color: rgb(153, 54, 54);
 }
 #clear > .btn {
     width: 80px;
