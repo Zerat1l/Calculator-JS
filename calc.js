@@ -4,11 +4,12 @@ export function getValue(e) {
 
     let input = e.target.value;
 
-    if(e.target.tagName == 'BUTTON') {
+    if(e.target.tagName == 'BUTTON' && input == 'clear') {
+        display.textContent = '';
+    }
 
-        if(input == 'clear') {
-            display.textContent = '';
-        }
+    if(e.target.tagName == 'BUTTON' && display.textContent.length <= 15) {
+
         if(input == '=') {
             let result = eval(display.textContent);
             display.textContent = result;
@@ -23,6 +24,8 @@ export function getValue(e) {
         }else if(display.textContent.length > 0 && input !== '=') {
             display.textContent += input
         }
+    }else {
+        display.textContent = 'Max digits reached!'
     }
       
 }
